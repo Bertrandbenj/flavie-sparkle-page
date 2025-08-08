@@ -27,13 +27,6 @@ const HeroSection = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-12">
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Bienvenue dans mon espace de soin. Je vous accompagne avec douceur 
-            sur le chemin de votre bien-être grâce au toucher thérapeutique et à l'écoute bienveillante.
-          </p>
-        </div>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button size="lg" className="btn-primary px-8 py-6 text-lg">
             Prendre rendez-vous

@@ -53,12 +53,12 @@ const ContactSection = () => {
                       <MapPin className="w-6 h-6 text-secondary mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold mb-1">Lieux de consultation</h4>
-                        <div className="text-muted-foreground space-y-2">
-                          <p>📍 49 Rue de la Gourmette, 44300 Nantes<br/>
-                          <span className="text-sm">Mercredis matins et vendredis</span></p>
-                          <p>📍 39 Rue de la Massonnière, 44120 Vertou<br/>
-                          <span className="text-sm">Mercredis à La Maison des Trois Colibris</span></p>
-                        </div>
+                         <div className="text-muted-foreground space-y-2">
+                           <p>📍 49 Rue de la Gourmette, 44300 Nantes<br/>
+                           <span className="text-sm">Mercredis matins et vendredis</span></p>
+                           <p>📍 39 Rue de la Massonnière, 44120 Vertou<br/>
+                           <span className="text-sm">Mercredis à La Maison des Trois Colibris</span></p>
+                         </div>
                       </div>
                     </div>
                     

@@ -30,18 +30,31 @@ const AboutSection = () => {
                   </p>
                   
                   <p>
-                    Ma pratique du toucher thérapeutique s'inspire de différentes approches 
-                    complémentaires qui permettent d'accompagner la personne dans sa globalité.
+                    Dans un espace d'écoute et d'accueil, j'ai à coeur de faire de mon mieux pour vous accompagner à libérer, nettoyer, apaiser les espaces en vous qui en ont besoin.
                   </p>
                   
                   <p>
-                    Mon approche privilégie l'écoute bienveillante et le respect de votre rythme. 
-                    Chaque séance est unique et adaptée à vos besoins du moment.
+                    Par les soins énergétiques que je vous propose, je vous accompagne à relâcher vos tensions physiques et psychiques et à tisser une relation saine et aimante avec vous-même.
                   </p>
                   
                   <p>
-                    Dans un cadre sécurisant et apaisant, je vous accompagne avec douceur 
-                    vers un mieux-être durable.
+                    En tant que Membre de l'équipe des soins supports du Centre d'Endométriose à la Polyclinique de l'Atlantique de Saint-Herblain (44), il me tient à coeur de recevoir et d'accompagner les femmes sur leur parcours de vie.
+                  </p>
+                  
+                  <p>
+                    Je pratique également à distance des séances d'écoute et d'éclairage.
+                  </p>
+                  
+                  <p>
+                    J'ai le plaisir de vous recevoir cet été en cabinet sur Nantes et Vertou.
+                  </p>
+                  
+                  <p>
+                    Pour toute question et pour prendre rendez-vous, n'hésitez-pas à me contacter.
+                  </p>
+                  
+                  <p>
+                    Bonne visite sur mon site et au plaisir de vous rencontrer !
                   </p>
                 </div>
 
@@ -74,7 +87,7 @@ const AboutSection = () => {
                     Changement de cabinet !
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Le cabinet du 30 avenue Pierre Loti 44400 Rezé a fermé ses portes le 27 juin.
+                    Le cabinet du 30 avenue Pierre Loti 444400 Rezé a fermé ses portes le 27 juin.
                   </p>
                   <p className="text-muted-foreground mb-4">
                     Cet été, je vous reçois :
