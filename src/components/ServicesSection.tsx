@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Flower, Hand, Sparkles, Clock, Users2, Baby } from "lucide-react";
+import { Flower, Hand, Sparkles, Clock, Users2, Baby, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 const ServicesSection = () => {
+  const [expandedService, setExpandedService] = useState<number | null>(null);
   const services = [
     {
       icon: Hand,
@@ -38,6 +40,27 @@ const ServicesSection = () => {
       description: "Il me tient à coeur d'accompagner la femme sur son parcours de vie. Douleurs abdominales, endométriose, parcours de grossesse / de maternité, rapport à son corps…",
       duration: "60-90 min",
       audience: "Femmes",
+      expandedContent: {
+        subtitle: "Un accompagnement énergétique doux, profond et respectueux de la femme quelque soit son parcours de vie.",
+        sections: [
+          {
+            title: "Projet bébé – Parcours de grossesse",
+            content: "Que vous vous sentiez en attente d'une grossesse, que vous soyez en parcours PMA, ayez vécu une fausse-couche, un avortement, un deuil périnatal… quelque soit votre histoire autour de la maternité, je me propose de vous aider et de vous accompagner sur votre chemin.\n\nA travers l'écoute, le reiki, le massage du ventre, les soins énergétiques combinés, la présence, l'échange… je fais de mon mieux pour vous accueillir, vous et votre histoire."
+          },
+          {
+            title: "Endométriose",
+            content: "On vous a diagnostiqué une endométriose, récemment ou depuis longtemps et vous avez besoin de prendre soin de vous à ce sujet ?\n\nEn complément de votre suivi médical, je me propose de vous accueillir et de vous accompagner.\n\nMembre des soins supports du Centre Endométriose de la Polyclinique de l'Atlantique à St Herblain (44), je vous reçois et vous accueille à mon cabinet pour prendre soin ensemble, dans la douceur, de votre corps et de ce que vous vivez dans votre vie de femme."
+          },
+          {
+            title: "Douleurs, inconfort, trouble abdominal",
+            content: "Douleurs à l'estomac, transit perturbé, irritations, sensation de pesanteur, sensation de ventre noué…\n\nEn complément d'un suivi médical, je vous reçois et vous accompagne à travers le massage du ventre (chi nei tsang), ou bien une combinaison de soin énergétique, massage du ventre, ainsi que toute la boîte à outils dont je dispose au besoin pour vous aider au mieux."
+          },
+          {
+            title: "Besoin d'une pause, besoin de douceur",
+            content: "Quelque soit ce que vous vivez en ce moment, si vous ressentez un besoin de douceur, le besoin de vous déposer, de relâcher les tensions du quotidien, le stress, de souffler et de prendre un vrai temps pour vous retrouver…\n\nDe prendre le temps de prendre soin de vous en y étant accompagnée, je me propose de vous recevoir et de vous y aider."
+          }
+        ]
+      }
     },
   ];
 
@@ -86,10 +109,59 @@ const ServicesSection = () => {
                       </span>
                     </div>
                     
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      En savoir plus
+                    <Button 
+                      variant="outline" 
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                      onClick={() => {
+                        if (service.title === "Accompagnement de la femme") {
+                          setExpandedService(expandedService === index ? null : index);
+                        }
+                      }}
+                    >
+                      {service.title === "Accompagnement de la femme" ? (
+                        <div className="flex items-center gap-2">
+                          En savoir plus
+                          {expandedService === index ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                        </div>
+                      ) : (
+                        "En savoir plus"
+                      )}
                     </Button>
                   </CardContent>
+                  
+                  {/* Expanded content for Accompagnement de la femme */}
+                  {service.title === "Accompagnement de la femme" && expandedService === index && service.expandedContent && (
+                    <CardContent className="pt-0 pb-8 px-8">
+                      <div className="border-t pt-6">
+                        <p className="text-lg font-medium text-secondary mb-6">
+                          {service.expandedContent.subtitle}
+                        </p>
+                        
+                        <div className="space-y-6">
+                          {service.expandedContent.sections.map((section, sectionIndex) => (
+                            <div key={sectionIndex}>
+                              <h4 className="text-lg font-semibold text-primary mb-3">
+                                {section.title}
+                              </h4>
+                              <div className="text-muted-foreground leading-relaxed">
+                                {section.content.split('\n\n').map((paragraph, pIndex) => (
+                                  <p key={pIndex} className={pIndex > 0 ? "mt-4" : ""}>
+                                    {paragraph}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        <div className="mt-6 pt-4 border-t">
+                          <p className="text-sm text-muted-foreground italic">
+                            Important : Les soins énergétiques ne se substituent pas à un suivi gynécologique et médical, ils en sont un complément.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  )}
                 </Card>
               );
             })}

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, MapPin } from "lucide-react";
-import portraitImage from "@/assets/flavie-portrait.jpg";
+import massageImage from "@/assets/massage-healing.jpg";
 
 const AboutSection = () => {
   return (
@@ -67,8 +67,8 @@ const AboutSection = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src={portraitImage} 
-                  alt="Flavie Arnou - Praticienne en toucher thérapeutique"
+                  src={massageImage} 
+                  alt="Soin énergétique - Massage thérapeutique"
                   className="w-full max-w-md mx-auto rounded-lg shadow-lg"
                 />
                 <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-secondary/20 rounded-full blur-xl"></div>
