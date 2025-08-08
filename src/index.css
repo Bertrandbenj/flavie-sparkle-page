@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Flavie Arnou Wellness Landing Page Design System 
+Nature-inspired healing aesthetics with warm earth tones
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm cream background inspired by natural healing spaces */
+    --background: 32 40% 97%;
+    --foreground: 25 20% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card surfaces with soft warmth */
+    --card: 30 35% 98%;
+    --card-foreground: 25 20% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover with natural tones */
+    --popover: 30 35% 98%;
+    --popover-foreground: 25 20% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep forest green for trust and healing */
+    --primary: 145 25% 35%;
+    --primary-foreground: 30 35% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Warm coral inspired by the flowers on her site */
+    --secondary: 15 85% 70%;
+    --secondary-foreground: 25 20% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones for subtle elements */
+    --muted: 35 25% 92%;
+    --muted-foreground: 25 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Soft sage green for highlights */
+    --accent: 120 20% 88%;
+    --accent-foreground: 145 25% 35%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Warm alert colors */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 30 35% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Subtle borders and inputs */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 145 25% 35%;
 
-    --radius: 0.5rem;
+    /* Healing-inspired gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(145 25% 35% / 0.1), hsl(15 85% 70% / 0.1));
+    --gradient-warm: linear-gradient(180deg, hsl(30 35% 98%), hsl(35 25% 92%));
+    --gradient-nature: linear-gradient(135deg, hsl(120 30% 85%), hsl(80 40% 90%));
+
+    /* Elegant shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(25 20% 25% / 0.08);
+    --shadow-warm: 0 8px 30px hsl(15 85% 70% / 0.15);
+    --shadow-nature: 0 12px 40px hsl(145 25% 35% / 0.12);
+
+    /* Smooth transitions for healing feeling */
+    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +79,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with warm evening tones */
+    --background: 25 15% 12%;
+    --foreground: 30 35% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 15% 15%;
+    --card-foreground: 30 35% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 15% 15%;
+    --popover-foreground: 30 35% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 120 20% 75%;
+    --primary-foreground: 25 15% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 15 70% 60%;
+    --secondary-foreground: 30 35% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 10% 20%;
+    --muted-foreground: 30 15% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 120 15% 25%;
+    --accent-foreground: 30 35% 90%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 30 35% 90%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 25 10% 25%;
+    --input: 25 10% 25%;
+    --ring: 120 20% 75%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +124,75 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom font imports for elegant healing aesthetic */
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-section {
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px hsl(var(--primary) / 0.1);
+  }
+
+  /* Elegant cards */
+  .healing-card {
+    background: var(--gradient-warm);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-gentle);
+  }
+
+  .healing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-warm);
+  }
+
+  /* Contact buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)) 60%, hsl(145 30% 40%));
+    color: hsl(var(--primary-foreground));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-nature);
+    transition: var(--transition-gentle);
+    border: none;
+    font-weight: 500;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
+  }
+
+  .btn-secondary {
+    background: linear-gradient(135deg, hsl(var(--secondary)), hsl(15 90% 75%));
+    color: hsl(var(--secondary-foreground));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-warm);
+    transition: var(--transition-gentle);
+    border: none;
+    font-weight: 500;
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(var(--secondary) / 0.4);
   }
 }
